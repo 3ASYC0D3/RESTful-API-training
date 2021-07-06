@@ -1,0 +1,21 @@
+user CRUD:
+
+- CREATE new user 
+method: POST 'https://localhost:3000/users'
+
+form to CREATE new user
+method: GET 'https://localhost:3000/users/new
+
+!- READ all users (index) 
+method: GET 'https://localhost:3000/users'
+
+- READ particular user
+method: GET 'https://localhost:3000/users/:id'
+
+- UPDATE user data
+method: PUT / PATCH  'https://localhost:3000/users/:id'
+
+form to UPDATE user data: GET 'https://localhost:3000/users/:id/edit'
+
+- DELETE user
+method: DELETE 'https://localhost:3000/users/:id'

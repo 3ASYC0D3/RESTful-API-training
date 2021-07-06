@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit user datails</title>
+</head>
+<body>
+    <h2> Edit <%= user.firstName %> <%= user.lastName %> details </h2>
+    <form action="">
+        <label for="phoneNumber">Phone number: </label>
+        <input type="number" placeholder="<%= user.phoneNumber %>">
+        <br>
+        <label for="emailAddress">Email address:</label>
+        <input type="email" placeholder="<%= user.emailAddress%>">
+
+    <button><a href="">Update</a></button>
+    </form>
+</body>
+</html>
