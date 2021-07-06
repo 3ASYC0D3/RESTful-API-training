@@ -1,0 +1,22 @@
+{
+  "name": "rest_trn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3ASYC0D3/RESTful-API-training.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3ASYC0D3/RESTful-API-training/issues"
+  },
+  "homepage": "https://github.com/3ASYC0D3/RESTful-API-training#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
