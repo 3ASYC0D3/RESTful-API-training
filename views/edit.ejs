@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit user datails</title>
+    <title>Edit user details</title>
 </head>
 <body>
     <h2> Edit <%= user.firstName %> <%= user.lastName %> details </h2>
-    <form action="">
-        <label for="phoneNumber">Phone number: </label>
-        <input type="number" placeholder="<%= user.phoneNumber %>">
+    <form method="POST" action="/users/<%=user.userId%>?_method=PATCH">
+        <label for="phoneNumber">Phone number</label>
+        <input type="number" id="phoneNumber" name="phoneNumber" placeholder="<%= user.phoneNumber %>">
         <br>
-        <label for="emailAddress">Email address:</label>
-        <input type="email" placeholder="<%= user.emailAddress%>">
+        <label for="emailAddress"> Email address</label>
+        <input type="text" id="emailAddress" name="emailAddress" placeholder="<%= user.emailAddress %>">
+        <br>
+        <label for="firstName">First namer</label>
+        <input type="text" id="firstName" name="firstName" placeholder="<%= user.firstName %>">
+        <br>
+        <label for="lastName"> Last name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="<%= user.lastName %>">
 
-    <button><a href="">Update</a></button>
+        <button type="submit">Save</button>
+    </form>
+
+
     </form>
 </body>
 </html>

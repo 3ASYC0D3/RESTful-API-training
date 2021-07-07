@@ -1,6 +1,7 @@
 const express = require('express');
 const ejs = require('ejs');
 const path = require('path');
+const methodOverride = require('method-override');
 const app = express();
 const port = 3000;
 const { v4: uuid } = require('uuid');
@@ -11,6 +12,7 @@ uuid();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.listen(port);
@@ -84,6 +86,16 @@ app.get('/users/:userId/edit', (req, res) => {
     const { userId } = req.params;
     const user = users.find(u => u.userId == userId);
     res.render('edit', { user });
+})
+
+app.patch('/users/:userId', (req, res) => {
+    const { userId } = req.params;
+    let user = users.find(u => u.userId == userId);
+    user.phoneNumber = req.body.phoneNumber;
+    user.emailAddress = req.body.emailAddress;
+    user.firstName = req.body.firstName;
+    user.lastName = req.body.lastName;
+    res.redirect(`/users/${user.userId}`);
 })
 
 
