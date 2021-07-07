@@ -98,4 +98,10 @@ app.patch('/users/:userId', (req, res) => {
     res.redirect(`/users/${user.userId}`);
 })
 
+app.delete('/users/:userId', (req, res) => {
+    const { userId } = req.params;
+    users = users.filter(u => u.userId !== userId);
+    res.redirect('/users');
+})
+
 
