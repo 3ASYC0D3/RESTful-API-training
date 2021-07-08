@@ -91,10 +91,18 @@ app.get('/users/:userId/edit', (req, res) => {
 app.patch('/users/:userId', (req, res) => {
     const { userId } = req.params;
     let user = users.find(u => u.userId == userId);
+    if (req.body.phoneNumber.length > 0) {
     user.phoneNumber = req.body.phoneNumber;
+    }
+    if (req.body.emailAddress.length > 0) {
     user.emailAddress = req.body.emailAddress;
+    }
+    if (req.body.firstName.length > 0) {
     user.firstName = req.body.firstName;
+    }
+    if (req.body.lastName.length > 0) {
     user.lastName = req.body.lastName;
+    }
     res.redirect(`/users/${user.userId}`);
 })
 
